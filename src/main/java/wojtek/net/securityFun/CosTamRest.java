@@ -25,13 +25,13 @@ public class CosTamRest {
     @GetMapping("/noSec")
     public ResponseEntity<String> cosTam0(){
 
-
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		PasswordEncoder encoder = new BCryptPasswordEncoder();
         String wynik = encoder.encode("wojtek");
 
         System.out.println(" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " + wynik);
 
-        return ResponseEntity.ok("cos tam NO secured");
+        return ResponseEntity.ok("cos tam NO secured, hash bcrypt dla wojtek: " + wynik);
+
 
     }
 
